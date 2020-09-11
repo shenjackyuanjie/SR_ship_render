@@ -1,0 +1,204 @@
+<Ship version="1" liftedOff="0" touchingGround="0">
+    <Parts>
+        <Part partType="pod-1" id="1" x="0.000000" y="2.750000" angle="3.141593" angleV="0.000000" editorAngle="2">
+            <Pod throttle="0.000000" name="">
+                <Staging currentStage="0">
+                    <Step>
+                        <Activate Id="783" moved="1" />
+                        <Activate Id="784" moved="1" />
+                        <Activate Id="785" moved="1" />
+                        <Activate Id="786" moved="1" />
+                        <Activate Id="787" moved="1" />
+                        <Activate Id="788" moved="1" />
+                        <Activate Id="789" moved="1" />
+                        <Activate Id="790" moved="1" />
+                        <Activate Id="719" moved="1" />
+                        <Activate Id="721" moved="1" />
+                        <Activate Id="722" moved="1" />
+                        <Activate Id="720" moved="1" />
+                        <Activate Id="805" moved="1" />
+                        <Activate Id="806" moved="1" />
+                        <Activate Id="801" moved="1" />
+                        <Activate Id="807" moved="1" />
+                        <Activate Id="808" moved="1" />
+                        <Activate Id="809" moved="1" />
+                        <Activate Id="791" moved="1" />
+                        <Activate Id="792" moved="1" />
+                        <Activate Id="797" moved="1" />
+                        <Activate Id="799" moved="1" />
+                        <Activate Id="800" moved="1" />
+                        <Activate Id="802" moved="1" />
+                        <Activate Id="803" moved="1" />
+                        <Activate Id="804" moved="1" />
+                    </Step>
+                </Staging>
+            </Pod>
+        </Part>
+        <Part partType="strut-1" id="710" x="0.000000" y="4.000000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="fueltank-3" id="711" x="0.000000" y="5.500000" angle="1.570796" angleV="0.000000" editorAngle="1">
+            <Tank fuel="6000.000000" />
+        </Part>
+        <Part partType="fueltank-3" id="712" x="0.000000" y="7.500000" angle="1.570796" angleV="0.000000" editorAngle="1">
+            <Tank fuel="6000.000000" />
+        </Part>
+        <Part partType="fueltank-3" id="717" x="5.000000" y="8.500000" angle="3.141593" angleV="0.000000" editorAngle="2">
+            <Tank fuel="6000.000000" />
+        </Part>
+        <Part partType="fueltank-2" id="734" x="5.000000" y="2.500000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="3000.000000" />
+        </Part>
+        <Part partType="fueltank-6" id="737" x="3.750000" y="2.750000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="200000000.000000" />
+        </Part>
+        <Part partType="strut-1" id="782" x="10.000000" y="2.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="ion-1" id="784" x="7.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="785" x="9.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="788" x="11.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="790" x="13.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="solar-2" id="792" x="14.250000" y="2.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="802" x="7.500000" y="3.250000" angle="1.570796" angleV="0.000000" editorAngle="1" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="803" x="10.000000" y="3.250000" angle="1.570796" angleV="0.000000" editorAngle="1" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="804" x="12.500000" y="3.250000" angle="1.570796" angleV="0.000000" editorAngle="1" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="rcs-2" id="739" x="6.250000" y="11.250000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="fueltank-3" id="718" x="-5.000000" y="8.500000" angle="3.141593" angleV="0.000000" editorAngle="2">
+            <Tank fuel="6000.000000" />
+        </Part>
+        <Part partType="fueltank-2" id="735" x="-5.000000" y="2.500000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="3000.000000" />
+        </Part>
+        <Part partType="fueltank-6" id="736" x="-3.750000" y="2.750000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="200000000.000000" />
+        </Part>
+        <Part partType="strut-1" id="781" x="-10.000000" y="2.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="ion-1" id="783" x="-7.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="786" x="-9.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="787" x="-11.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="789" x="-13.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="solar-2" id="791" x="-14.250000" y="2.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="1" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="797" x="-7.500000" y="3.250000" angle="1.570796" angleV="0.000000" editorAngle="1" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="799" x="-10.000000" y="3.250000" angle="1.570796" angleV="0.000000" editorAngle="1" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="800" x="-12.500000" y="3.250000" angle="1.570796" angleV="0.000000" editorAngle="1" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="rcs-2" id="738" x="-6.250000" y="11.250000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="1" flippedY="0" />
+        <Part partType="strut-1" id="819" x="0.000000" y="12.000000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="dock-1" id="794" x="0.000000" y="12.750000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="battery-0" id="732" x="-2.000000" y="3.250000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="250.000000" />
+        </Part>
+        <Part partType="battery-0" id="733" x="2.000000" y="3.250000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="250.000000" />
+        </Part>
+        <Part partType="strut-1" id="731" x="0.000000" y="1.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="fueltank-3" id="713" x="0.000000" y="0.000000" angle="1.570796" angleV="0.000000" editorAngle="1">
+            <Tank fuel="6000.000000" />
+        </Part>
+        <Part partType="fueltank-3" id="714" x="0.000000" y="-2.000000" angle="1.570796" angleV="0.000000" editorAngle="1">
+            <Tank fuel="6000.000000" />
+        </Part>
+        <Part partType="ion-1" id="719" x="-3.000000" y="-3.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="721" x="-1.000000" y="-3.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="722" x="1.000000" y="-3.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="ion-1" id="720" x="3.000000" y="-3.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0">
+            <Engine fuel="0.000000" />
+        </Part>
+        <Part partType="fueltank-3" id="715" x="5.000000" y="-3.500000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="6000.000000" />
+        </Part>
+        <Part partType="rcs-2" id="741" x="6.250000" y="-6.250000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="solar-2" id="807" x="6.250000" y="-0.500000" angle="3.141593" angleV="0.000000" editorAngle="2" activated="0" exploded="0" flippedX="1" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="808" x="6.250000" y="-2.500000" angle="3.141593" angleV="0.000000" editorAngle="2" activated="0" exploded="0" flippedX="1" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="809" x="6.250000" y="-4.500000" angle="3.141593" angleV="0.000000" editorAngle="2" activated="0" exploded="0" flippedX="1" flippedY="0" extension="0.000000" />
+        <Part partType="fueltank-3" id="716" x="-5.000000" y="-3.500000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="6000.000000" />
+        </Part>
+        <Part partType="rcs-2" id="740" x="-6.250000" y="-6.250000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="1" flippedY="0" />
+        <Part partType="strut-1" id="818" x="0.000000" y="-7.000000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="dock-1" id="795" x="0.000000" y="-7.750000" angle="3.141593" angleV="0.000000" editorAngle="2" activated="0" exploded="0" flippedX="0" flippedY="0" />
+        <Part partType="solar-2" id="806" x="-6.250000" y="-0.500000" angle="3.141593" angleV="0.000000" editorAngle="2" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="801" x="-6.250000" y="-2.500000" angle="0.000000" angleV="0.000000" editorAngle="0" activated="0" exploded="0" flippedX="1" flippedY="0" extension="0.000000" />
+        <Part partType="solar-2" id="805" x="-6.250000" y="-4.500000" angle="3.141593" angleV="0.000000" editorAngle="2" activated="0" exploded="0" flippedX="0" flippedY="0" extension="0.000000" />
+        <Part partType="battery-0" id="726" x="2.000000" y="2.250000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="250.000000" />
+        </Part>
+        <Part partType="battery-0" id="725" x="-2.000000" y="2.250000" angle="0.000000" angleV="0.000000" editorAngle="0">
+            <Tank fuel="250.000000" />
+        </Part>
+    </Parts>
+    <Connections>
+        <Connection parentAttachPoint="2" childAttachPoint="2" parentPart="1" childPart="710" />
+        <Connection parentAttachPoint="1" childAttachPoint="3" parentPart="710" childPart="711" />
+        <Connection parentAttachPoint="4" childAttachPoint="3" parentPart="711" childPart="712" />
+        <Connection parentAttachPoint="2" childAttachPoint="4" parentPart="711" childPart="717" />
+        <Connection parentAttachPoint="1" childAttachPoint="1" parentPart="717" childPart="734" />
+        <Connection parentAttachPoint="3" childAttachPoint="1" parentPart="734" childPart="737" />
+        <Connection parentAttachPoint="4" childAttachPoint="3" parentPart="734" childPart="782" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="782" childPart="784" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="782" childPart="785" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="782" childPart="788" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="782" childPart="790" />
+        <Connection parentAttachPoint="4" childAttachPoint="2" parentPart="782" childPart="792" />
+        <Connection parentAttachPoint="1" childAttachPoint="2" parentPart="782" childPart="802" />
+        <Connection parentAttachPoint="1" childAttachPoint="2" parentPart="782" childPart="803" />
+        <Connection parentAttachPoint="1" childAttachPoint="2" parentPart="782" childPart="804" />
+        <Connection parentAttachPoint="3" childAttachPoint="2" parentPart="717" childPart="739" />
+        <Connection parentAttachPoint="1" childAttachPoint="3" parentPart="711" childPart="718" />
+        <Connection parentAttachPoint="1" childAttachPoint="1" parentPart="718" childPart="735" />
+        <Connection parentAttachPoint="4" childAttachPoint="2" parentPart="735" childPart="736" />
+        <Connection parentAttachPoint="3" childAttachPoint="4" parentPart="735" childPart="781" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="781" childPart="783" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="781" childPart="786" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="781" childPart="787" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="781" childPart="789" />
+        <Connection parentAttachPoint="3" childAttachPoint="1" parentPart="781" childPart="791" />
+        <Connection parentAttachPoint="1" childAttachPoint="2" parentPart="781" childPart="797" />
+        <Connection parentAttachPoint="1" childAttachPoint="2" parentPart="781" childPart="799" />
+        <Connection parentAttachPoint="1" childAttachPoint="2" parentPart="781" childPart="800" />
+        <Connection parentAttachPoint="4" childAttachPoint="1" parentPart="718" childPart="738" />
+        <Connection parentAttachPoint="3" childAttachPoint="3" parentPart="718" childPart="819" />
+        <Connection parentAttachPoint="1" childAttachPoint="1" parentPart="819" childPart="794" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="710" childPart="732" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="710" childPart="733" />
+        <Connection parentAttachPoint="1" childAttachPoint="1" parentPart="1" childPart="731" />
+        <Connection parentAttachPoint="2" childAttachPoint="4" parentPart="731" childPart="713" />
+        <Connection parentAttachPoint="3" childAttachPoint="4" parentPart="713" childPart="714" />
+        <Connection parentAttachPoint="3" childAttachPoint="1" parentPart="714" childPart="719" />
+        <Connection parentAttachPoint="3" childAttachPoint="1" parentPart="714" childPart="721" />
+        <Connection parentAttachPoint="3" childAttachPoint="1" parentPart="714" childPart="722" />
+        <Connection parentAttachPoint="3" childAttachPoint="1" parentPart="714" childPart="720" />
+        <Connection parentAttachPoint="2" childAttachPoint="3" parentPart="713" childPart="715" />
+        <Connection parentAttachPoint="4" childAttachPoint="2" parentPart="715" childPart="741" />
+        <Connection parentAttachPoint="4" childAttachPoint="1" parentPart="715" childPart="807" />
+        <Connection parentAttachPoint="4" childAttachPoint="1" parentPart="715" childPart="808" />
+        <Connection parentAttachPoint="4" childAttachPoint="1" parentPart="715" childPart="809" />
+        <Connection parentAttachPoint="1" childAttachPoint="4" parentPart="713" childPart="716" />
+        <Connection parentAttachPoint="3" childAttachPoint="1" parentPart="716" childPart="740" />
+        <Connection parentAttachPoint="4" childAttachPoint="3" parentPart="716" childPart="818" />
+        <Connection parentAttachPoint="2" childAttachPoint="1" parentPart="818" childPart="795" />
+        <Connection parentAttachPoint="3" childAttachPoint="2" parentPart="716" childPart="806" />
+        <Connection parentAttachPoint="3" childAttachPoint="1" parentPart="716" childPart="801" />
+        <Connection parentAttachPoint="3" childAttachPoint="2" parentPart="716" childPart="805" />
+        <Connection parentAttachPoint="1" childAttachPoint="2" parentPart="731" childPart="726" />
+        <Connection parentAttachPoint="1" childAttachPoint="2" parentPart="731" childPart="725" />
+    </Connections>
+</Ship>
