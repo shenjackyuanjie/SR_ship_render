@@ -114,5 +114,3 @@ class ship_render():
 
 
 test_class = ship_render()
-
-print(json_dun)
