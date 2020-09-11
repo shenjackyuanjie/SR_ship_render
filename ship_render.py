@@ -9,7 +9,6 @@ import easygui, shutil, os, math, random
 # --------------可修改变量------------------
 ship_pic_filename = 'ShipSprites.png'
 ship_pic_config = 'ShipSprites.xml'
-pic_reflash = False
 output_pic_size = [1024, 1024]
 output_pic_color = 'white'
 render_ship_name = 'test.xml'
@@ -81,3 +80,7 @@ class ship_render():
         for part in self.part_list:
             print(part)
             pass
+
+
+
+test_class = ship_render()
