@@ -1,2 +1,6 @@
 # ship_render
- awa SR stuf
+ awa
+
+ by shenjackyuanjie
+
+ SR ship's render
