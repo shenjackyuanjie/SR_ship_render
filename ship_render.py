@@ -61,9 +61,11 @@ class ship_render():
         part_configs = part_list.getElementsByTagName('PartType')
         for part_config in part_configs:
             part_id, sprite = self.get_At(['id', 'sprite'], part_config, need_type=str)
-            save_dic['part_to_png']
-        with open(self.part_config, mode='w'):
-            pass
+            push = {'part': part_id, 'png': sprite}
+            save_dic['part_to_png'].append(push)
+        with open(self.part_config, mode='w') as part_config_json:
+            save_json = json.dumps(save_dic)
+            json.dump(save_json, part_config_json)
 
     def load_xml(self, xml_name, getEBTN='', mode='r'):
         xml_load = xml.dom.minidom.parse(xml_name, mode) # 先load
@@ -112,20 +114,5 @@ class ship_render():
 
 
 test_class = ship_render()
-
-json_str = """{
-            "part_to_png":[
-                {"part":"part-1",
-                "png":"png-1"},
-                {"part":"part-2",
-                "png":"png-2"}
-            ]
-        }"""
-
-dicaa = {'part_to_png':[{'part':'part_name', 'png': 'png-1'},{'part':'part_name1', 'png': 'png-2'}]}
-
-json_dun = json.dumps(dicaa)
-
-
 
 print(json_dun)
