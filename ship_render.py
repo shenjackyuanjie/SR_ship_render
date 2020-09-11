@@ -24,6 +24,7 @@ class ship_render():
 
     def __init__(self, render_size=[1024, 1024], render_color='white'):
         self.pic_path = './pic_storage/'
+        self.part_config = 'part_config.json'
         self.part_pics = {}
         self.part_list = []
         self.render_pic = Image.new('RGB', render_size, render_color)
@@ -42,6 +43,13 @@ class ship_render():
         else: # 说好的只能文本和列表呢？？
             raise TypeError('only str and list type is ok but you give me a' + name_type + 'type')
         return need_type(At)
+
+    def save_part_config(self):
+        try:
+            with open(self.part_config, mode='r'):
+                pass
+        except:
+            pass
 
     def load_xml(self, xml_name, getEBTN='', mode='r'):
         xml_load = xml.dom.minidom.parse(xml_name, mode) # 先load
