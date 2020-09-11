@@ -1,11 +1,17 @@
 """
 by shenjack
 """
-from PIL import Image
+
 import xml
-from xml.dom.minidom import parse
+import json
+import easygui
+import shutil
+import os
+import math
+import random
+from PIL import Image
 import xml.dom.minidom
-import easygui, shutil, os, math, random
+from xml.dom.minidom import parse
 # --------------可修改变量------------------
 ship_pic_filename = 'ShipSprites.png'
 ship_pic_config = 'ShipSprites.xml'
