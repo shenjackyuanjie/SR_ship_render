@@ -45,17 +45,6 @@ class ship_render():
         return need_type(At)
 
     def save_part_config(self, part_list_xml):
-        """
-        {
-            "part_to_png":[
-                {"part":"part-1",
-                "png":"png-1"},
-                {"part":"part-2",
-                "png":"png-2"}
-            ]
-        }
-        {'part_to_png':[{'part':'part_name', 'png': 'png-1'}]}
-        """
         save_dic = {'part_to_png': []}
         part_list = self.load_xml(part_list_xml, getEBTN='PartTypes')
         part_configs = part_list.getElementsByTagName('PartType')
@@ -111,6 +100,17 @@ class ship_render():
             print(part)
             pass
 
-
-
 test_class = ship_render()
+
+
+        """
+        {
+            "part_to_png":[
+                {"part":"part-1",
+                "png":"png-1"},
+                {"part":"part-2",
+                "png":"png-2"}
+            ]
+        }
+        {'part_to_png':[{'part':'part_name', 'png': 'png-1'}]}
+        """
