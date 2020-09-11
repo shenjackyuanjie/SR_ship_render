@@ -59,7 +59,7 @@ class ship_render():
             x, y = self.get_At(['x', 'y'], part, int) # 部件的x、y值
             t = self.get_At('angle', part, float) # 部件的旋转值
             PT = self.get_At('partType', part, float) # 部件的类型
-            part_config = [PT, x, y, t]
+            part_config = [PT, x, y, t] # 压缩数据并保存
             self.part_list.append(part_config)
 
     def reflash_pic(self, load_pic_name, load_xml_name):
