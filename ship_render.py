@@ -47,11 +47,11 @@ class ship_render():
         return xml_get
 
     def load_part_pic(self):
-        pics = os.listdir(self.pic_path)
-        for pic in pics:
-            part_pic = Image.open(self.pic_path + pic)
-            pic_name = pic[:-4]
-            self.part_pics[pic_name] = part_pic
+        pics = os.listdir(self.pic_path) # 获取文件夹里的图片列表
+        for pic in pics: # 挨个处理
+            part_pic = Image.open(self.pic_path + pic) # 打开新图片
+            pic_name = pic[:-4] # 文件名处理
+            self.part_pics[pic_name] = part_pic # 把新的图片存储进去
 
     def load_ship_xml(self, ship_xml_name):
         ship_xml = self.load_xml(ship_xml_name, 'part') # 先加载飞船的存档
