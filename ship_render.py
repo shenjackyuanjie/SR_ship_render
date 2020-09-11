@@ -47,9 +47,8 @@ class ship_render():
 
     def save_part_config(self, part_list_xml):
         save_dic = {'part_to_png': []}
-        part_list = self.load_xml(part_list_xml, getEBTN='PartTypes')
-        part_configs = part_list.getElementsByTagName('PartType')
-        for part_config in part_configs:
+        part_list = self.load_xml(part_list_xml, getEBTN='PartType')
+        for part_config in part_list:
             part_id, sprite = self.get_At(['id', 'sprite'], part_config, need_type=str)
             push = {'part': part_id, 'png': sprite}
             save_dic['part_to_png'].append(push)
@@ -58,8 +57,8 @@ class ship_render():
             json.dump(save_json, part_config_json)
         return
 
-    def load_xml(self, xml_name, getEBTN='', mode='r'):
-        xml_load = xml.dom.minidom.parse(xml_name, mode) # 先load
+    def load_xml(self, xml_name, getEBTN=''):
+        xml_load = xml.dom.minidom.parse(xml_name) # 先load
         if not (getEBTN == ''): # 需要顺手获取一波数据
             xml_get = xml_load.getElementsByTagName(getEBTN)
             return xml_get
@@ -108,6 +107,10 @@ class ship_render():
 
 test_class = ship_render()
 
+test_class.save_part_config('PartList.xml')
+
+# test_class.load_xml('PartList.xml')
+
 """
         {
             "part_to_png":[
@@ -118,4 +121,4 @@ test_class = ship_render()
             ]
         }
         {'part_to_png':[{'part':'part_name', 'png': 'png-1'}]}
-        """
+"""
