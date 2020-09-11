@@ -29,13 +29,14 @@ class ship_render():
         self.part_list = []
         self.render_pic = Image.new('RGB', render_size, render_color)
         self.SR_pi = 3.141593
+        return
 
     def get_At(self, name, in_xml, need_type=str):
         name_type = type(name) # 判定输入需要获取At的数据类型
         if name_type == list: # 如果需要获取列表数据
             At_list = [] # 获取到的数据的列表
             for need_name in name: # 挨个获取
-                get = in_xml.getAttribute(need_name) # 要说啥？
+                get = in_xml.getAttribute(need_name)
                 At_list.append(need_type(get))
             return At_list
         elif name_type == str: # 直接获取
@@ -55,6 +56,7 @@ class ship_render():
         with open(self.part_config, mode='w') as part_config_json:
             save_json = json.dumps(save_dic)
             json.dump(save_json, part_config_json)
+        return
 
     def load_xml(self, xml_name, getEBTN='', mode='r'):
         xml_load = xml.dom.minidom.parse(xml_name, mode) # 先load
@@ -70,6 +72,7 @@ class ship_render():
             part_pic = Image.open(self.pic_path + pic) # 打开新图片
             pic_name = pic[:-4] # 文件名处理
             self.part_pics[pic_name] = part_pic # 把新的图片存储进去
+        return
 
     def load_ship_xml(self, ship_xml_name):
         ship_xml = self.load_xml(ship_xml_name, 'part') # 先加载飞船的存档
@@ -79,6 +82,7 @@ class ship_render():
             PT = self.get_At('partType', part, float) # 部件的类型
             part_config = [PT, x, y, t] # 压缩数据并保存
             self.part_list.append(part_config)
+        return
 
     def reflash_pic(self, load_pic_name, load_xml_name):
         pic = Image.open(load_pic_name, mode='r') # 加载被切割图片
@@ -92,6 +96,7 @@ class ship_render():
             crop_pic.save(save_name) # 保存照片
             shutil.move('./' + save_name, self.pic_path + save_name) # 移动图片
         self.load_part_pic()
+        return
 
     def render_ship(self, render_ship_name):
         self.load_ship_xml(render_ship_name)
@@ -99,6 +104,7 @@ class ship_render():
         for part in self.part_list:
             print(part)
             pass
+        return
 
 test_class = ship_render()
 
