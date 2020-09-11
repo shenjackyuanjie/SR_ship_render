@@ -54,11 +54,14 @@ class ship_render():
                 "png":"png-2"}
             ]
         }
-
         {'part_to_png':[{'part':'part_name', 'png': 'png-1'}]}
         """
-        defaut_dic = {'part_to_png' : []}
-        self.load_xml(part_list_xml, getEBTN='PartTypes')
+        save_dic = {'part_to_png': []}
+        part_list = self.load_xml(part_list_xml, getEBTN='PartTypes')
+        part_configs = part_list.getElementsByTagName('PartType')
+        for part_config in part_configs:
+            part_id, sprite = self.get_At(['id', 'sprite'], part_config, need_type=str)
+            save_dic['part_to_png']
         with open(self.part_config, mode='w'):
             pass
 
@@ -66,9 +69,9 @@ class ship_render():
         xml_load = xml.dom.minidom.parse(xml_name, mode) # 先load
         if not (getEBTN == ''): # 需要顺手获取一波数据
             xml_get = xml_load.getElementsByTagName(getEBTN)
+            return xml_get
         else:
             return xml_load
-        return xml_get
 
     def load_part_pic(self):
         pics = os.listdir(self.pic_path) # 获取文件夹里的图片列表
