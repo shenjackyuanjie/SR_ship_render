@@ -54,11 +54,11 @@ class ship_render():
             self.part_pics[pic_name] = part_pic
 
     def load_ship_xml(self, ship_xml_name):
-        ship_xml = self.load_xml(ship_xml_name, 'part')
-        for part in ship_xml:
-            x, y = self.get_At(['x', 'y'], part, int)
-            t = self.get_At('angle', part, float)
-            PT = self.get_At('partType', part, float)
+        ship_xml = self.load_xml(ship_xml_name, 'part') # 先加载飞船的存档
+        for part in ship_xml: # 挨个零件保存
+            x, y = self.get_At(['x', 'y'], part, int) # 部件的x、y值
+            t = self.get_At('angle', part, float) # 部件的旋转值
+            PT = self.get_At('partType', part, float) # 部件的类型
             part_config = [PT, x, y, t]
             self.part_list.append(part_config)
 
