@@ -102,8 +102,7 @@ class ship_render():
 
 test_class = ship_render()
 
-
-        """
+"""
         {
             "part_to_png":[
                 {"part":"part-1",
