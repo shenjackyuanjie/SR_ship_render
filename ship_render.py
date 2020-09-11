@@ -53,8 +53,7 @@ class ship_render():
             push = {'part': part_id, 'png': sprite}
             save_dic['part_to_png'].append(push)
         with open(self.part_config, mode='w') as part_config_json:
-            save_json = json.dumps(save_dic)
-            json.dump(save_json, part_config_json)
+            json.dump(save_dic, part_config_json)
         return
 
     def load_xml(self, xml_name, getEBTN=''):
