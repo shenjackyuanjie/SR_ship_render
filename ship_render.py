@@ -44,11 +44,22 @@ class ship_render():
             raise TypeError('only str and list type is ok but you give me a' + name_type + 'type')
         return need_type(At)
 
-    def save_part_config(self):
-        try:
-            with open(self.part_config, mode='r'):
-                pass
-        except:
+    def save_part_config(self, part_list_xml):
+        """
+        {
+            "part_to_png":[
+                {"part":"part-1",
+                "png":"png-1"},
+                {"part":"part-2",
+                "png":"png-2"}
+            ]
+        }
+
+        {'part_to_png':[{'part':'part_name', 'png': 'png-1'}]}
+        """
+        defaut_dic = {'part_to_png' : []}
+        self.load_xml(part_list_xml, getEBTN='PartTypes')
+        with open(self.part_config, mode='w'):
             pass
 
     def load_xml(self, xml_name, getEBTN='', mode='r'):
@@ -98,3 +109,20 @@ class ship_render():
 
 
 test_class = ship_render()
+
+json_str = """{
+            "part_to_png":[
+                {"part":"part-1",
+                "png":"png-1"},
+                {"part":"part-2",
+                "png":"png-2"}
+            ]
+        }"""
+
+dicaa = {'part_to_png':[{'part':'part_name', 'png': 'png-1'},{'part':'part_name1', 'png': 'png-2'}]}
+
+json_dun = json.dumps(dicaa)
+
+
+
+print(json_dun)
