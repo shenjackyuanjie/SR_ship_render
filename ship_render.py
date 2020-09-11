@@ -2,13 +2,13 @@
 by shenjack
 """
 
-import xml
-import json
-import easygui
-import shutil
 import os
+import xml
 import math
+import json
+import shutil
 import random
+import easygui
 from PIL import Image
 import xml.dom.minidom
 from xml.dom.minidom import parse
