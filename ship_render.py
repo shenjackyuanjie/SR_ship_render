@@ -27,7 +27,7 @@ class ship_render():
     def __init__(self, render_size=[1024, 1024], render_color='white'):
         self.pic_path = './pic_storage/'
         self.part_config_path = 'part_config.json'
-        self.part_list = 'PartList.xml'
+        self.part_list_path = 'PartList.xml'
         self.main_path = './main/'
         self.part_pics = {}
         self.part_list = []
@@ -36,15 +36,16 @@ class ship_render():
         self.SR_pi = 3.141593
 
     def save_part_config(self):
-        save_dic = {'part_to_png': []}
-        partlist_path = self.main_path + self.part_list
+        save_dic = {'part_png': {}, 'part_size': {}}
+        
+        partlist_path = self.main_path + self.part_list_path
         part_list = tt.load_xml(partlist_path, getEBTN='PartType')
+
         for part_config in part_list:
-            part_id, sprite = tt.get_At(
-                ['id', 'sprite'], part_config, need_type=str)
-            push = {'part': part_id, 'png': sprite}
-            save_dic['part_to_png'].append(push)
+            part_id, sprite = tt.get_At(['id', 'sprite'], part_config)
+            save_dic['part_png'][part_id] = sprite
         save_path = self.main_path + self.part_config_path
+
         with open(save_path, mode='w') as part_config_json:
             json.dump(save_dic, part_config_json)
 
@@ -56,7 +57,6 @@ class ship_render():
                 self.part_config = part_config
         except:
             self.save_part_config()
-            self.load_part_config(t=try_time)
 
     def load_part_pic(self):
         pics = os.listdir(self.pic_path)
@@ -90,7 +90,10 @@ class ship_render():
     def render_ship(self, render_ship_name):
         self.load_ship_xml(render_ship_name)
         self.load_part_pic()
+        self.load_part_config()
         for part in self.part_list:
+            part_id = tt.get_At()
+            png = self.part_config['part_png'][part_id]
             print(part)
 
 
@@ -101,13 +104,10 @@ test_class.save_part_config()
 # test_class.load_xml('PartList.xml')
 
 """
-        {
-            "part_to_png":[
-                {"part":"part-1",
-                "png":"png-1"},
-                {"part":"part-2",
-                "png":"png-2"}
-            ]
-        }
-        {'part_to_png':[{'part':'part_name', 'png': 'png-1'}]}
+{
+    "part_png":{
+        'part_id': 'part_1'
+    }
+}
+{'part_png':[{'part': 'png-1'}]}
 """

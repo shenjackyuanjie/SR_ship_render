@@ -1,132 +1,36 @@
 {
-    "part_to_png": [
-        {
-            "part": "pod-1",
-            "png": "Pod.png"
-        },
-        {
-            "part": "detacher-1",
-            "png": "DetacherVertical.png"
-        },
-        {
-            "part": "detacher-2",
-            "png": "DetacherRadial.png"
-        },
-        {
-            "part": "wheel-1",
-            "png": "Wheel.png"
-        },
-        {
-            "part": "wheel-2",
-            "png": "Wheel.png"
-        },
-        {
-            "part": "fuselage-1",
-            "png": "Fuselage.png"
-        },
-        {
-            "part": "strut-1",
-            "png": "Beam.png"
-        },
-        {
-            "part": "fueltank-0",
-            "png": "TankTiny.png"
-        },
-        {
-            "part": "fueltank-1",
-            "png": "TankSmall.png"
-        },
-        {
-            "part": "fueltank-2",
-            "png": "TankMedium.png"
-        },
-        {
-            "part": "fueltank-3",
-            "png": "TankLarge.png"
-        },
-        {
-            "part": "fueltank-4",
-            "png": "Puffy750.png"
-        },
-        {
-            "part": "fueltank-5",
-            "png": "SideTank.png"
-        },
-        {
-            "part": "fueltank-6",
-            "png": "SideTank.png"
-        },
-        {
-            "part": "engine-0",
-            "png": "EngineTiny.png"
-        },
-        {
-            "part": "engine-1",
-            "png": "EngineSmall.png"
-        },
-        {
-            "part": "engine-2",
-            "png": "EngineMedium.png"
-        },
-        {
-            "part": "engine-3",
-            "png": "EngineLarge.png"
-        },
-        {
-            "part": "engine-4",
-            "png": "SolidRocketBooster.png"
-        },
-        {
-            "part": "ion-0",
-            "png": "EngineIon.png"
-        },
-        {
-            "part": "ion-1",
-            "png": "EngineIon.png"
-        },
-        {
-            "part": "parachute-1",
-            "png": "ParachuteCanister.png"
-        },
-        {
-            "part": "nosecone-1",
-            "png": "NoseCone.png"
-        },
-        {
-            "part": "rcs-1",
-            "png": "RcsBlock.png"
-        },
-        {
-            "part": "rcs-2",
-            "png": "RcsBlock.png"
-        },
-        {
-            "part": "solar-1",
-            "png": "SolarPanelBase.png"
-        },
-        {
-            "part": "solar-2",
-            "png": "SolarPanelBase.png"
-        },
-        {
-            "part": "battery-0",
-            "png": "Battery.png"
-        },
-        {
-            "part": "battery-1",
-            "png": "Battery.png"
-        },
-        {
-            "part": "dock-1",
-            "png": "DockingConnector.PNG"
-        },
-        {
-            "part": "port-1",
-            "png": "DockingPort.png"
-        },
-        {
-            "part": "lander-1",
-            "png": "LanderLegPreview.png"
-        }
-    ]
+    "part_to_png": {
+        "pod-1": "Pod.png",
+        "detacher-1": "DetacherVertical.png",
+        "detacher-2": "DetacherRadial.png",
+        "wheel-1": "Wheel.png",
+        "wheel-2": "Wheel.png",
+        "fuselage-1": "Fuselage.png",
+        "strut-1": "Beam.png",
+        "fueltank-0": "TankTiny.png",
+        "fueltank-1": "TankSmall.png",
+        "fueltank-2": "TankMedium.png",
+        "fueltank-3": "TankLarge.png",
+        "fueltank-4": "Puffy750.png",
+        "fueltank-5": "SideTank.png",
+        "fueltank-6": "SideTank.png",
+        "engine-0": "EngineTiny.png",
+        "engine-1": "EngineSmall.png",
+        "engine-2": "EngineMedium.png",
+        "engine-3": "EngineLarge.png",
+        "engine-4": "SolidRocketBooster.png",
+        "ion-0": "EngineIon.png",
+        "ion-1": "EngineIon.png",
+        "parachute-1": "ParachuteCanister.png",
+        "nosecone-1": "NoseCone.png",
+        "rcs-1": "RcsBlock.png",
+        "rcs-2": "RcsBlock.png",
+        "solar-1": "SolarPanelBase.png",
+        "solar-2": "SolarPanelBase.png",
+        "battery-0": "Battery.png",
+        "battery-1": "Battery.png",
+        "dock-1": "DockingConnector.PNG",
+        "port-1": "DockingPort.png",
+        "lander-1": "LanderLegPreview.png"
+    }
 }
