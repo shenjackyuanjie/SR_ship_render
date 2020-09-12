@@ -21,26 +21,30 @@ output_pic_color = 'white'
 render_ship_name = 'test.xml'
 # --------------可修改变量结束--------------
 
+
 class ship_render():
 
     def __init__(self, render_size=[1024, 1024], render_color='white'):
         self.pic_path = './pic_storage/'
-        self.part_config = 'part_config.json'
+        self.part_config_path = 'part_config.json'
+        self.part_list = 'PartList.xml'
         self.main_path = './main/'
         self.part_pics = {}
         self.part_list = []
+        self.part_config = {}
         self.render_pic = Image.new('RGB', render_size, render_color)
         self.SR_pi = 3.141593
 
-    def save_part_config(self, part_list_xml):
+    def save_part_config(self):
         save_dic = {'part_to_png': []}
-        partlist_path = self.main_path + part_list_xml
+        partlist_path = self.main_path + self.part_list
         part_list = tt.load_xml(partlist_path, getEBTN='PartType')
         for part_config in part_list:
-            part_id, sprite = tt.get_At(['id', 'sprite'], part_config, need_type=str)
+            part_id, sprite = tt.get_At(
+                ['id', 'sprite'], part_config, need_type=str)
             push = {'part': part_id, 'png': sprite}
             save_dic['part_to_png'].append(push)
-        save_path = self.main_path + self.part_config
+        save_path = self.main_path + self.part_config_path
         with open(save_path, mode='w') as part_config_json:
             json.dump(save_dic, part_config_json)
 
@@ -73,12 +77,24 @@ class ship_render():
             shutil.move('./' + save_name, self.pic_path + save_name)
         self.load_part_pic()
 
+    def load_part_config(self):
+        open_path = self.main_path + self.part_config_path
+        try:
+            with open(open_path, mode='r') as parts:
+                parts_config = json.loads(parts)
+                ptps = parts_config['part_to_png']
+                for ptp in ptps:
+                    pass
+        except:
+            self.save_part_config()
+    
     def render_ship(self, render_ship_name):
         self.load_ship_xml(render_ship_name)
         self.load_part_pic()
         for part in self.part_list:
             print(part)
-            pass
+            
+
 
 test_class = ship_render()
 
