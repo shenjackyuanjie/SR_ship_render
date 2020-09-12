@@ -26,7 +26,7 @@ class ship_render():
     def __init__(self, render_size=[1024, 1024], render_color='white'):
         self.pic_path = './pic_storage/'
         self.part_config = 'part_config.json'
-        self.config_path = './config/'
+        self.main_path = './main/'
         self.part_pics = {}
         self.part_list = []
         self.render_pic = Image.new('RGB', render_size, render_color)
@@ -34,12 +34,14 @@ class ship_render():
 
     def save_part_config(self, part_list_xml):
         save_dic = {'part_to_png': []}
-        part_list = tt.load_xml(part_list_xml, getEBTN='PartType')
+        partlist_path = self.main_path + part_list_xml
+        part_list = tt.load_xml(partlist_path, getEBTN='PartType')
         for part_config in part_list:
             part_id, sprite = tt.get_At(['id', 'sprite'], part_config, need_type=str)
             push = {'part': part_id, 'png': sprite}
             save_dic['part_to_png'].append(push)
-        with open(self.part_config, mode='w') as part_config_json:
+        save_path = self.main_path + self.part_config
+        with open(save_path, mode='w') as part_config_json:
             json.dump(save_dic, part_config_json)
 
     def load_part_pic(self):
