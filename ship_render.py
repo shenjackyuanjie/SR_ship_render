@@ -46,14 +46,14 @@ class ship_render():
         return need_type(At)
 
     def save_part_config(self, part_list_xml):
-        save_dic = {'part_to_png': []}
-        part_list = self.load_xml(part_list_xml, getEBTN='PartType')
-        for part_config in part_list:
-            part_id, sprite = self.get_At(['id', 'sprite'], part_config, need_type=str)
-            push = {'part': part_id, 'png': sprite}
-            save_dic['part_to_png'].append(push)
-        with open(self.part_config, mode='w') as part_config_json:
-            json.dump(save_dic, part_config_json)
+        save_dic = {'part_to_png': []} # 保存的字典的初始版本
+        part_list = self.load_xml(part_list_xml, getEBTN='PartType') # partlist.xml
+        for part_config in part_list: # 挨个來
+            part_id, sprite = self.get_At(['id', 'sprite'], part_config, need_type=str) # 获取需要的部分
+            push = {'part': part_id, 'png': sprite} # 格式化一下
+            save_dic['part_to_png'].append(push) # 将获取到的加入到保存列表里
+        with open(self.part_config, mode='w') as part_config_json: # 打开配置文件
+            json.dump(save_dic, part_config_json) # 保存json
         return
 
     def load_xml(self, xml_name, getEBTN=''):
