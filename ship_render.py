@@ -87,18 +87,17 @@ class ship_render():
                     pass
         except:
             self.save_part_config()
-    
+
     def render_ship(self, render_ship_name):
         self.load_ship_xml(render_ship_name)
         self.load_part_pic()
         for part in self.part_list:
             print(part)
-            
 
 
 test_class = ship_render()
 
-test_class.save_part_config('PartList.xml')
+test_class.save_part_config()
 
 # test_class.load_xml('PartList.xml')
 
