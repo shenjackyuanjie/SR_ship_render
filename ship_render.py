@@ -29,7 +29,6 @@ class ship_render():
         self.part_list = []
         self.render_pic = Image.new('RGB', render_size, render_color)
         self.SR_pi = 3.141593
-        return
 
     def get_At(self, name, in_xml, need_type=str):
         name_type = type(name) # 判定输入需要获取At的数据类型
