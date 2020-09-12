@@ -4,7 +4,6 @@ by shenjack(shenjackyuanjie)
 
 import os
 import xml
-import tools as tt
 import math
 import json
 import shutil
@@ -12,6 +11,7 @@ import random
 import easygui
 from PIL import Image
 import xml.dom.minidom
+from main import tools as tt
 from xml.dom.minidom import parse
 # --------------可修改变量------------------
 ship_pic_filename = 'ShipSprites.png'
@@ -26,6 +26,7 @@ class ship_render():
     def __init__(self, render_size=[1024, 1024], render_color='white'):
         self.pic_path = './pic_storage/'
         self.part_config = 'part_config.json'
+        self.config_path = './config/'
         self.part_pics = {}
         self.part_list = []
         self.render_pic = Image.new('RGB', render_size, render_color)
