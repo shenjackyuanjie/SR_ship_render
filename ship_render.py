@@ -48,6 +48,16 @@ class ship_render():
         with open(save_path, mode='w') as part_config_json:
             json.dump(save_dic, part_config_json)
 
+    def load_part_config(self):
+        open_path = self.main_path + self.part_config_path
+        try:
+            with open(open_path, mode='r') as parts:
+                part_config = json.loads(parts)
+                self.part_config = part_config
+        except:
+            self.save_part_config()
+            self.load_part_config(t=try_time)
+
     def load_part_pic(self):
         pics = os.listdir(self.pic_path)
         for pic in pics:
@@ -76,17 +86,6 @@ class ship_render():
             crop_pic.save(save_name)
             shutil.move('./' + save_name, self.pic_path + save_name)
         self.load_part_pic()
-
-    def load_part_config(self):
-        open_path = self.main_path + self.part_config_path
-        try:
-            with open(open_path, mode='r') as parts:
-                parts_config = json.loads(parts)
-                ptps = parts_config['part_to_png']
-                for ptp in ptps:
-                    pass
-        except:
-            self.save_part_config()
 
     def render_ship(self, render_ship_name):
         self.load_ship_xml(render_ship_name)
