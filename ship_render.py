@@ -4,6 +4,7 @@ by shenjack(shenjackyuanjie)
 
 import os
 import xml
+import tools as tt
 import math
 import json
 import shutil
@@ -30,37 +31,15 @@ class ship_render():
         self.render_pic = Image.new('RGB', render_size, render_color)
         self.SR_pi = 3.141593
 
-    def get_At(self, name, in_xml, need_type=str):
-        name_type = type(name)
-        if name_type == list:
-            At_list = []
-            for need_name in name:
-                get = in_xml.getAttribute(need_name)
-                At_list.append(need_type(get))
-            return At_list
-        elif name_type == str:
-            At = in_xml.getAttribute(name)
-        else:
-            raise TypeError('only str and list type is ok but you give me a' + name_type + 'type')
-        return need_type(At)
-
     def save_part_config(self, part_list_xml):
         save_dic = {'part_to_png': []}
-        part_list = self.load_xml(part_list_xml, getEBTN='PartType')
+        part_list = tt.load_xml(part_list_xml, getEBTN='PartType')
         for part_config in part_list:
-            part_id, sprite = self.get_At(['id', 'sprite'], part_config, need_type=str)
+            part_id, sprite = tt.get_At(['id', 'sprite'], part_config, need_type=str)
             push = {'part': part_id, 'png': sprite}
             save_dic['part_to_png'].append(push)
         with open(self.part_config, mode='w') as part_config_json:
             json.dump(save_dic, part_config_json)
-
-    def load_xml(self, xml_name, getEBTN=''):
-        xml_load = xml.dom.minidom.parse(xml_name)
-        if not (getEBTN == ''):
-            xml_get = xml_load.getElementsByTagName(getEBTN)
-            return xml_get
-        else:
-            return xml_load
 
     def load_part_pic(self):
         pics = os.listdir(self.pic_path)
@@ -70,20 +49,20 @@ class ship_render():
             self.part_pics[pic_name] = part_pic
 
     def load_ship_xml(self, ship_xml_name):
-        ship_xml = self.load_xml(ship_xml_name, 'part')
+        ship_xml = tt.load_xml(ship_xml_name, 'part')
         for part in ship_xml:
-            x, y = self.get_At(['x', 'y'], part, int)
-            t = self.get_At('angle', part, float)
-            PT = self.get_At('partType', part, float)
+            x, y = tt.get_At(['x', 'y'], part, int)
+            t = tt.get_At('angle', part, float)
+            PT = tt.get_At('partType', part, float)
             part_config = [PT, x, y, t]
             self.part_list.append(part_config)
 
     def reflash_pic(self, load_pic_name, load_xml_name):
         pic = Image.open(load_pic_name, mode='r')
-        xml_sprite = self.load_xml(load_pic_name, 'sprite')
+        xml_sprite = tt.load_xml(load_pic_name, 'sprite')
         for pic_config in xml_sprite:
-            x, y, w, h = self.get_At(['x', 'y', 'w', 'h'], pic_config, int)
-            n = self.get_At('n', pic_config, str)
+            x, y, w, h = tt.get_At(['x', 'y', 'w', 'h'], pic_config, int)
+            n = tt.get_At('n', pic_config, str)
             crop_box = [x, y, x+w, y+h]
             save_name = n[:-4] + '.png'
             crop_pic = pic.crop(crop_box)
