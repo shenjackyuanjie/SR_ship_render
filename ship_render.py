@@ -26,8 +26,8 @@ class ship_render():
 
     def __init__(self, render_size=[1024, 1024], render_color='white'):
         self.pic_path = './pic_storage/'
-        self.part_config_path = 'part_config.json'
-        self.part_list_path = 'PartList.xml'
+        self.part_config_path = '/part_config.json'
+        self.part_list_path = '/PartList.xml'
         self.main_path = './main/'
         self.part_pics = {}
         self.part_list = []
@@ -48,7 +48,7 @@ class ship_render():
             save_dic['part_size'][part_id] = part_size
             save_dic['part_png'][part_id] = sprite
         save_path = self.main_path + self.part_config_path
-
+        print(save_path, 'saveing')
         with open(save_path, mode='w') as part_config_json:
             json.dump(save_dic, part_config_json)
 
@@ -56,9 +56,9 @@ class ship_render():
         open_path = self.main_path + self.part_config_path
         try:
             with open(open_path, mode='r') as parts:
-                part_config = json.loads(parts)
+                part_config = json.load(parts)
                 self.part_config = part_config
-        except:
+        except FileNotFoundError:
             self.save_part_config()
             self.load_part_config()
 
@@ -70,12 +70,14 @@ class ship_render():
             self.part_pics[pic_name] = part_pic
 
     def load_ship_xml(self, ship_xml_name):
-        ship_xml = tt.load_xml(ship_xml_name, 'part')
+        print('load_ship_xml')
+        ship_xml = tt.load_xml(ship_xml_name, 'Part')
         for part in ship_xml:
-            x, y = tt.get_At(['x', 'y'], part, int)
+            x, y = tt.get_At(['x', 'y'], part, float)
             t = tt.get_At('angle', part, float)
-            PT = tt.get_At('partType', part, float)
+            PT = tt.get_At('partType', part, str)
             part_config = [PT, x, y, t]
+            print(part_config)
             self.part_list.append(part_config)
 
     def reflash_pic(self, load_pic_name, load_xml_name):
@@ -95,15 +97,21 @@ class ship_render():
         self.load_ship_xml(render_ship_name)
         self.load_part_pic()
         self.load_part_config()
+        print(self.part_list)
         for part in self.part_list:
-            part_id = tt.get_At('partType', part)
+            part_id = part[0]
             png = self.part_config['part_png'][part_id]
-            print(part_id, png)
+            w = self.part_config['part_size'][part_id]['width']
+            h = self.part_config['part_size'][part_id]['height']
+            print(part_id, png, w, h)
+            pic_pic = self.part_pics[part_id]
 
 
 test_class = ship_render()
 
-test_class.save_part_config()
+# test_class.save_part_config()
+
+test_class.render_ship('test.xml')
 
 # test_class.load_xml('PartList.xml')
 
