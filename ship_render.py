@@ -8,7 +8,6 @@ import math
 import json
 import shutil
 import random
-import easygui
 from PIL import Image
 import xml.dom.minidom
 from main import tools as tt
@@ -29,6 +28,7 @@ class ship_render():
         self.part_config_path = '/part_config.json'
         self.part_list_path = '/PartList.xml'
         self.main_path = './main/'
+        self.render_pic_center = [render_size[0] // 2, render_size[1] // 2]
         self.part_pics = {}
         self.part_list = []
         self.part_config = {}
@@ -103,15 +103,16 @@ class ship_render():
             part[1] = int(part[1])
             part[2] = int(part[2])
             png = self.part_config['part_png'][part_id][:-4]
-            w = self.part_config['part_size'][part_id]['width']
-            h = self.part_config['part_size'][part_id]['height']
-            print(part_id, png, w, h)
             pic_pic = self.part_pics[png]
-            paste_box = [part[1], part[2], part[1] + w, part[2] + h]
+            w, h = pic_pic.size
+            print(part_id, png, w, h)
+            paste_box = [part[1] + self.render_pic_center[0], part[2] + self.render_pic_center[1], part[1] + w + self.render_pic_center[0], part[2] + h + self.render_pic_center[1]]
+
             print(paste_box)
             print(pic_pic)
             print(self.render_pic)
             self.render_pic.paste(pic_pic, paste_box)
+        self.render_pic.show()
 
 
 test_class = ship_render()
