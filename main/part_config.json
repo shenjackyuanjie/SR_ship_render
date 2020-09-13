@@ -1,5 +1,5 @@
 {
-    "part_to_png": {
+    "part_png": {
         "pod-1": "Pod.png",
         "detacher-1": "DetacherVertical.png",
         "detacher-2": "DetacherRadial.png",
@@ -32,5 +32,135 @@
         "dock-1": "DockingConnector.PNG",
         "port-1": "DockingPort.png",
         "lander-1": "LanderLegPreview.png"
+    },
+    "part_size": {
+        "pod-1": {
+            "width": 4,
+            "height": 3
+        },
+        "detacher-1": {
+            "width": 4,
+            "height": 1
+        },
+        "detacher-2": {
+            "width": 1,
+            "height": 4
+        },
+        "wheel-1": {
+            "width": 4,
+            "height": 4
+        },
+        "wheel-2": {
+            "width": 4,
+            "height": 4
+        },
+        "fuselage-1": {
+            "width": 4,
+            "height": 4
+        },
+        "strut-1": {
+            "width": 16,
+            "height": 2
+        },
+        "fueltank-0": {
+            "width": 4,
+            "height": 2
+        },
+        "fueltank-1": {
+            "width": 4,
+            "height": 4
+        },
+        "fueltank-2": {
+            "width": 4,
+            "height": 8
+        },
+        "fueltank-3": {
+            "width": 4,
+            "height": 16
+        },
+        "fueltank-4": {
+            "width": 4,
+            "height": 2
+        },
+        "fueltank-5": {
+            "width": 1,
+            "height": 3
+        },
+        "fueltank-6": {
+            "width": 1,
+            "height": 3
+        },
+        "engine-0": {
+            "width": 4,
+            "height": 2
+        },
+        "engine-1": {
+            "width": 4,
+            "height": 4
+        },
+        "engine-2": {
+            "width": 4,
+            "height": 6
+        },
+        "engine-3": {
+            "width": 4,
+            "height": 8
+        },
+        "engine-4": {
+            "width": 4,
+            "height": 26
+        },
+        "ion-0": {
+            "width": 4,
+            "height": 2
+        },
+        "ion-1": {
+            "width": 4,
+            "height": 2
+        },
+        "parachute-1": {
+            "width": 4,
+            "height": 1
+        },
+        "nosecone-1": {
+            "width": 4,
+            "height": 2
+        },
+        "rcs-1": {
+            "width": 1,
+            "height": 3
+        },
+        "rcs-2": {
+            "width": 1,
+            "height": 3
+        },
+        "solar-1": {
+            "width": 1,
+            "height": 4
+        },
+        "solar-2": {
+            "width": 1,
+            "height": 4
+        },
+        "battery-0": {
+            "width": 4,
+            "height": 1
+        },
+        "battery-1": {
+            "width": 4,
+            "height": 1
+        },
+        "dock-1": {
+            "width": 4,
+            "height": 1
+        },
+        "port-1": {
+            "width": 2,
+            "height": 4
+        },
+        "lander-1": {
+            "width": 1,
+            "height": 5
+        }
     }
 }

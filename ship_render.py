@@ -43,6 +43,9 @@ class ship_render():
 
         for part_config in part_list:
             part_id, sprite = tt.get_At(['id', 'sprite'], part_config)
+            w, h = tt.get_At(['width', 'height'], part_config, int)
+            part_size = {'width': w, 'height': h}
+            save_dic['part_size'][part_id] = part_size
             save_dic['part_png'][part_id] = sprite
         save_path = self.main_path + self.part_config_path
 
@@ -57,6 +60,7 @@ class ship_render():
                 self.part_config = part_config
         except:
             self.save_part_config()
+            self.load_part_config()
 
     def load_part_pic(self):
         pics = os.listdir(self.pic_path)
@@ -92,9 +96,9 @@ class ship_render():
         self.load_part_pic()
         self.load_part_config()
         for part in self.part_list:
-            part_id = tt.get_At()
+            part_id = tt.get_At('partType', part)
             png = self.part_config['part_png'][part_id]
-            print(part)
+            print(part_id, png)
 
 
 test_class = ship_render()
