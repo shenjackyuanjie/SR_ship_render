@@ -32,7 +32,7 @@ class ship_render():
         self.part_pics = {}
         self.part_list = []
         self.part_config = {}
-        self.render_pic = Image.new('RGB', render_size, render_color)
+        self.render_pic = Image.new('RGBA', render_size, render_color)
         self.SR_pi = 3.141593
 
     def save_part_config(self):
@@ -100,11 +100,18 @@ class ship_render():
         print(self.part_list)
         for part in self.part_list:
             part_id = part[0]
-            png = self.part_config['part_png'][part_id]
+            part[1] = int(part[1])
+            part[2] = int(part[2])
+            png = self.part_config['part_png'][part_id][:-4]
             w = self.part_config['part_size'][part_id]['width']
             h = self.part_config['part_size'][part_id]['height']
             print(part_id, png, w, h)
-            pic_pic = self.part_pics[part_id]
+            pic_pic = self.part_pics[png]
+            paste_box = [part[1], part[2], part[1] + w, part[2] + h]
+            print(paste_box)
+            print(pic_pic)
+            print(self.render_pic)
+            self.render_pic.paste(pic_pic, paste_box)
 
 
 test_class = ship_render()
