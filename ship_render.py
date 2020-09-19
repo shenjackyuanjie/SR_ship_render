@@ -75,7 +75,7 @@ class ship_render():
             x, y = int(x), int(y)
             t = tt.get_At('angle', part, float)
             PT = tt.get_At('partType', part, str)
-            part_config = {'x' : x, 'y': y, 'part_id' : PT, 'turn' : t}
+            part_config = {'x': x, 'y': y, 'part_id': PT, 'turn': t}
             print(part_config)
             self.part_list.append(part_config)
 
@@ -102,22 +102,24 @@ class ship_render():
             w, h = pic_pic.size
             pic_c = [int(self.render_center[0]), int(self.render_center[1])]
             turn = part['turn']
-            if turn == 0.0:
-                print('no turn')
-            elif turn == 1.570796:
-                pic_pic = pic_pic.rotate(90)
-                print('turn 90')
-            elif turn == 3.141593:
-                pic_pic = pic_pic.rotate(180)
-                print('turn 180')
-            elif turn == 4.712389:
-                pic_pic = pic_pic.rotate(270)
-                print('turn 270')
+            paste_box = [pic_c[0], pic_c[1], pic_c[0], pic_c[1]]
             part['x'], part['y'] = part['x'] * 30, part['y'] * 30
             paste_box = [part['x'] + pic_c[0], part['y'] + pic_c[1],
                          part['x'] + w + pic_c[0], part['y'] + h + pic_c[1]]
+            if turn == 0.0:
+                print('no turn ', end=' paste_box ')
+            elif turn == 1.570796:
+                pic_pic = pic_pic.rotate(90)
+                print('turn 90 ', end=' paste_box ')    
+            elif turn == 3.141593:
+                pic_pic = pic_pic.rotate(180)
+                print('turn 180', end=' paste_box ')
+            elif turn == 4.712389:
+                pic_pic = pic_pic.rotate(270)
+                print('turn 270', end=' paste_box ')
             print(paste_box)
-            self.render_pic.paste(pic_pic, paste_box)
+            self.render_pic.paste(pic_pic, paste_box)  
+        self.render_pic.save('render.png')
         self.render_pic.show()
 
 
