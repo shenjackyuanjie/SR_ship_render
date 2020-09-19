@@ -23,12 +23,12 @@ render_ship_name = 'test.xml'
 
 class ship_render():
 
-    def __init__(self, render_size=[1024, 1024], render_color='white'):
+    def __init__(self, render_size=[1024, 1024], render_color='red'):
         self.pic_path = './pic_storage/'
         self.part_config_path = '/part_config.json'
         self.part_list_path = '/PartList.xml'
         self.main_path = './main/'
-        self.render_pic_center = [render_size[0] // 2, render_size[1] // 2]
+        self.render_center = [render_size[0] // 2, render_size[1] // 2]
         self.part_pics = {}
         self.part_list = []
         self.part_config = {}
@@ -37,10 +37,9 @@ class ship_render():
 
     def save_part_config(self):
         save_dic = {'part_png': {}, 'part_size': {}}
-        
+
         partlist_path = self.main_path + self.part_list_path
         part_list = tt.load_xml(partlist_path, getEBTN='PartType')
-
         for part_config in part_list:
             part_id, sprite = tt.get_At(['id', 'sprite'], part_config)
             w, h = tt.get_At(['width', 'height'], part_config, int)
@@ -70,13 +69,13 @@ class ship_render():
             self.part_pics[pic_name] = part_pic
 
     def load_ship_xml(self, ship_xml_name):
-        print('load_ship_xml')
         ship_xml = tt.load_xml(ship_xml_name, 'Part')
         for part in ship_xml:
             x, y = tt.get_At(['x', 'y'], part, float)
+            x, y = int(x), int(y)
             t = tt.get_At('angle', part, float)
             PT = tt.get_At('partType', part, str)
-            part_config = [PT, x, y, t]
+            part_config = {'x' : x, 'y': y, 'part_id' : PT, 'turn' : t}
             print(part_config)
             self.part_list.append(part_config)
 
@@ -97,20 +96,27 @@ class ship_render():
         self.load_ship_xml(render_ship_name)
         self.load_part_pic()
         self.load_part_config()
-        print(self.part_list)
         for part in self.part_list:
-            part_id = part[0]
-            part[1] = int(part[1])
-            part[2] = int(part[2])
-            png = self.part_config['part_png'][part_id][:-4]
+            png = self.part_config['part_png'][part['part_id']][:-4]
             pic_pic = self.part_pics[png]
             w, h = pic_pic.size
-            print(part_id, png, w, h)
-            paste_box = [part[1] + self.render_pic_center[0], part[2] + self.render_pic_center[1], part[1] + w + self.render_pic_center[0], part[2] + h + self.render_pic_center[1]]
-
+            pic_c = [int(self.render_center[0]), int(self.render_center[1])]
+            turn = part['turn']
+            if turn == 0.0:
+                print('no turn')
+            elif turn == 1.570796:
+                pic_pic = pic_pic.rotate(90)
+                print('turn 90')
+            elif turn == 3.141593:
+                pic_pic = pic_pic.rotate(180)
+                print('turn 180')
+            elif turn == 4.712389:
+                pic_pic = pic_pic.rotate(270)
+                print('turn 270')
+            part['x'], part['y'] = part['x'] * 30, part['y'] * 30
+            paste_box = [part['x'] + pic_c[0], part['y'] + pic_c[1],
+                         part['x'] + w + pic_c[0], part['y'] + h + pic_c[1]]
             print(paste_box)
-            print(pic_pic)
-            print(self.render_pic)
             self.render_pic.paste(pic_pic, paste_box)
         self.render_pic.show()
 
