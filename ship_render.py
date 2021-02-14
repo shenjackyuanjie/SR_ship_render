@@ -10,7 +10,7 @@ import shutil
 import random
 from PIL import Image
 import xml.dom.minidom
-from main import tools as tt
+# from main import tools as tt
 from xml.dom.minidom import parse
 # --------------可修改变量------------------
 ship_pic_filename = 'ShipSprites.png'
@@ -103,7 +103,7 @@ class ship_render():
             pic_c = [int(self.render_center[0]), int(self.render_center[1])]
             turn = part['turn']
             paste_box = [pic_c[0], pic_c[1], pic_c[0], pic_c[1]]
-            part['x'], part['y'] = part['x'] * 30, part['y'] * 30
+            part['x'], part['y'] = part['x'] * 60, part['y'] * 60
             paste_box = [part['x'] + pic_c[0], part['y'] + pic_c[1],
                          part['x'] + w + pic_c[0], part['y'] + h + pic_c[1]]
             if turn == 0.0:
@@ -127,7 +127,7 @@ test_class = ship_render()
 
 # test_class.save_part_config()
 
-test_class.render_ship('test.xml')
+# test_class.render_ship('test.xml')
 
 # test_class.load_xml('PartList.xml')
 
